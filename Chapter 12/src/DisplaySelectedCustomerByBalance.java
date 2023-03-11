@@ -13,7 +13,6 @@ public class DisplaySelectedCustomerByBalance {
             System.out.println("Enter the Balance to look for");
             String balance = sc.nextLine();
 
-
             while(reader.hasNextLine())
             {
                 line = reader.nextLine();
