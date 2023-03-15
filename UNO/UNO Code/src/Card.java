@@ -1,46 +1,40 @@
 public class Card {
 
-    protected int value;
-    protected String color;
-    protected String action;
+    enum Color{
+        Red,Blue,Green,Yellow,Wild;
+    }
 
-    public Card(int value, String color) {
-        this.value = value;
+    enum Value{
+        Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,Skip,D2,Reverse,Wild,W4;
+    }
+
+    private final Color color;
+    private final Value value;
+
+    public Card(Color color,Value value)
+    {
         this.color = color;
+        this.value = value;
     }
 
     public Card() {
+        this.color=Color.Blue;
+        this.value=Value.One;
     }
 
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
-
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public Value getValue() {
+        return value;
     }
 
-    public String getAction() {
-        return action;
-    }
-
-    public void setAction(String action) {
-        this.action = action;
-    }
-
-    public boolean isMatch(Card c1, Card c2)
-    {
-        if(c1.getValue()==c2.getValue() || c1.getColor()==c2.getColor())
-            return true;
-        else
-            return false;
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "Card{" +
+                "color=" + color +
+                ", value=" + value +
+                '}';
     }
 }

@@ -1,12 +1,12 @@
+import java.util.ArrayList;
+
 public class Player {
 
-    protected int cardsInHand;
+    protected ArrayList<Card> hand = new ArrayList<>();
+    private int cardsInHand;
 
-    public Player(int cardsInHand) {
-        this.cardsInHand = cardsInHand;
-    }
-
-    public Player() {
+    public ArrayList<Card> getHand() {
+        return hand;
     }
 
     public int getCardsInHand() {
@@ -17,15 +17,4 @@ public class Player {
         this.cardsInHand = cardsInHand;
     }
 
-    public void drawCard(Deck d)
-    {
-        this.setCardsInHand(this.getCardsInHand()+1);
-        d.setCardsInDeck(d.getCardsInDeck()-1);
-    }
-
-    public void playCard(Stack s,Card c)
-    {
-        this.setCardsInHand(this.getCardsInHand()-1);
-        s.setTopCard(c);
-    }
 }
