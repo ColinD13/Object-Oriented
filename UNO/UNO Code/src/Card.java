@@ -8,7 +8,7 @@ public class Card {
         Zero,One,Two,Three,Four,Five,Six,Seven,Eight,Nine,Skip,D2,Reverse,Wild,W4;
     }
 
-    private final Color color;
+    private Color color;
     private final Value value;
 
     public Card(Color color,Value value)
@@ -28,6 +28,10 @@ public class Card {
 
     public Value getValue() {
         return value;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 
     @java.lang.Override
