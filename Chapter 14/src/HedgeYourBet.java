@@ -5,10 +5,10 @@ import java.awt.event.ActionListener;
 
 public class HedgeYourBet implements ActionListener {
 
-    private JCheckBox q1_1,q1_2,q1_3,q2_1,q2_2,q2_3,q3_1,q3_2,q3_3,q4_1,q4_2,q4_3,q5_1,q5_2,q5_3;
-    private JPanel one,two,three,four,five,six;
-    private JButton check;
-    private JLabel q1,q2,q3,q4,q5,score;
+    private final JCheckBox q1_1,q1_2,q1_3,q2_1,q2_2,q2_3,q3_1,q3_2,q3_3,q4_1,q4_2,q4_3,q5_1,q5_2,q5_3;
+    private final JPanel one,two,three,four,five,six;
+    private final JButton check;
+    private final JLabel q1,q2,q3,q4,q5,score;
     HedgeYourBet()
     {
         //Frame
