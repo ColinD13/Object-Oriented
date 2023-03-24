@@ -8,6 +8,7 @@ import com.mycompany.unonet.Game.InvalidColorSubmissionException;
 import com.mycompany.unonet.Game.InvalidPlayerTurnException;
 import com.mycompany.unonet.Game.InvalidValueSubmissionException;
 import java.util.ArrayList;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
 
@@ -35,7 +36,7 @@ public class PopUp extends javax.swing.JFrame {
         playerHand = game.getPlayerHand(game.getCurrentPlayer());
         choice = index;
         this.cardButtons = cardButtons;
-        cardLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PNGs/large"+ cardImage + ".png")));
+        cardLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\hocke\\OneDrive\\Desktop\\sprites\\small\\"+ cardImage + ".png"));
         this.gamestage = gamestage;
         this.topCardButton = topCardButton;
     }
@@ -66,6 +67,11 @@ public class PopUp extends javax.swing.JFrame {
 
         cancelButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
         cancelButton.setText("Cancel");
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -109,7 +115,7 @@ public class PopUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void useCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_useCardButtonActionPerformed
-        PickColorFrame pickColor = new PickColorFrae(this);
+        PickColorFrame pickColor = new PickColorFrame(this);
         declaredColor = pickColor.choseColor(playerHand.get(choice));
         
         if(declaredColor!=null)
@@ -121,13 +127,26 @@ public class PopUp extends javax.swing.JFrame {
                 Logger.getLogger(PopUp.class.getName()).log(Level.SEVERE,null,ex);
             }
             catch(InvalidValueSubmissionException ex){
-                
+                Logger.getLogger(PopUp.class.getName()).log(Level.SEVERE,null,ex);
             }
             catch(InvalidPlayerTurnException ex){
-                
+                Logger.getLogger(PopUp.class.getName()).log(Level.SEVERE,null,ex);
+            }
+            
+            this.revalidate();
+            if(declaredColor!=Card.Color.Wild)
+            {
+                gamestage.setPidName(game.getCurrentPlayer());
+                gamestage.setButtonIcons();
+                topCardButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\hocke\\OneDrive\\Desktop\\sprites\\small\\"+ game.getTopCardImage() + ".png"));
+                this.dispose();
             }
         }
     }//GEN-LAST:event_useCardButtonActionPerformed
+
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
     /**
      * @param args the command line arguments

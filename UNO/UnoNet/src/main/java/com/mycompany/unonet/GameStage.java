@@ -8,6 +8,7 @@ import com.mycompany.unonet.Game.InvalidPlayerTurnException;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javax.swing.JButton;
@@ -38,7 +39,7 @@ public class GameStage extends javax.swing.JFrame {
         populateArrayList();
         game.start(game);
         setPidName();
-        topCardButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PNGs/small/" + game.getTopCardImage())));
+        topCardButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\hocke\\OneDrive\\Desktop\\sprites\\small\\" + game.getTopCardImage()+ ".png"));
         setButtonIcons();
     }
     
@@ -48,7 +49,7 @@ public class GameStage extends javax.swing.JFrame {
         cardIds = new ArrayList<>(Arrays.asList(cardNames));
         for(int i=0;i<cardIds.size();i++)
         {
-            cardButtons.get(i).setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PNGs/small/" + cardIds.get(i)+".png")));
+            cardButtons.get(i).setIcon(new javax.swing.ImageIcon("C:\\Users\\hocke\\OneDrive\\Desktop\\sprites\\small\\" + cardIds.get(i)+".png"));
         }
         
         for(int i=cardIds.size();i<cardButtons.size();i++){
@@ -117,7 +118,6 @@ public class GameStage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Uno");
-        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 720));
 
@@ -236,6 +236,7 @@ public class GameStage extends javax.swing.JFrame {
             }
         });
 
+        downCard.setIcon(new javax.swing.ImageIcon("C:\\Users\\hocke\\OneDrive\\Desktop\\sprites\\PNGs\\small\\Card_Back.png")); // NOI18N
         downCard.setText("jButton3");
         downCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -370,7 +371,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -383,7 +384,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -396,7 +397,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -409,7 +410,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -422,7 +423,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -435,7 +436,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -448,7 +449,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -461,7 +462,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -474,7 +475,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -487,7 +488,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton10ActionPerformed
@@ -500,7 +501,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton11ActionPerformed
@@ -513,7 +514,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton12ActionPerformed
@@ -526,7 +527,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton13ActionPerformed
@@ -539,7 +540,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton14ActionPerformed
@@ -552,7 +553,7 @@ public class GameStage extends javax.swing.JFrame {
             window = new PopUp(cardId,game,index,cardButtons,this,topCardButton);
             window.setBounds(750,40,700,800);
             window.setVisible(true);
-            window.setResizeable(false);
+            window.setResizable(false);
             window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jButton15ActionPerformed

@@ -13,7 +13,7 @@ public class Deck {
     public Deck()
     {
         cards = new Card[108];
-
+        reset();
     }
 
     public void reset()
@@ -21,7 +21,7 @@ public class Deck {
         Card.Color[] colors = Card.Color.values();
         cardsInDeck= 0;
 
-        for(int x=0;x<colors.length-1;x++)
+        for(int x=0;x<colors.length-2;x++)
         {
             Card.Color color = colors[x];
 
@@ -29,7 +29,7 @@ public class Deck {
 
 
             //Adding numbered cards
-            for(int j =0; j<10;j++)
+            for(int j =0; j<9;j++)
             {
                 cards[cardsInDeck++] = new Card(color,Card.Value.getValue(j));
                 cards[cardsInDeck++] = new Card(color,Card.Value.getValue(j));
@@ -45,8 +45,8 @@ public class Deck {
             }
 
             //Adding wild and wild 4
-            Card.Value[] values2 = new Card.Value[]{Card.Value.Wild,Card.Value.W4};
-            for(Card.Value value : values2)
+            values = new Card.Value[]{Card.Value.Wild,Card.Value.W4};
+            for(Card.Value value : values)
             {
                 for(int y = 0;y<4;y++)
                 {
@@ -73,7 +73,7 @@ public class Deck {
 
         for(int i =0;i<cards.length;i++)
         {
-            int randomValue = i+ random.nextInt(n-1);
+            int randomValue = i+ random.nextInt(n-i);
             Card randomCard = cards[randomValue];
             cards[randomValue] = cards[i];
             cards[i] = randomCard;

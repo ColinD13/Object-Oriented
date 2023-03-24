@@ -3,7 +3,7 @@ package com.mycompany.unonet;
 public class Card{
 
     enum Color{
-        Red,BLue,Green,Yellow,Wild;
+        Red,Blue,Green,Yellow,Wild;
 
         private static final Color[] colors = Color.values();
         public static Color getColor(int i)

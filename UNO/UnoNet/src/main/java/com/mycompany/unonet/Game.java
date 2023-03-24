@@ -90,7 +90,7 @@ public class Game {
 
     public ImageIcon getTopCardImage()
     {
-        return new ImageIcon(validColor + "-" + validValue + ".png");
+        return new ImageIcon(validColor + "_" + validValue + ".png");
     }//end of getTopCardImage
 
     public boolean isGameOver()
