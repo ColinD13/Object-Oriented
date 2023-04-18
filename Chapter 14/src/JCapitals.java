@@ -40,7 +40,6 @@ public class JCapitals implements MouseListener {
         panel.add(jlist);
         panel.add(label);
         frame.add(panel);
-
     }
 
     public static void main(String[] args) {
